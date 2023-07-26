@@ -1,0 +1,6 @@
+/* Write your CSS here */
+.destination-list-container {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+}
