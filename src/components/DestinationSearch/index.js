@@ -6,16 +6,21 @@ import DestinationItem from '../DestinationItem'
 import './index.css'
 
 class DestinationSearch extends Component {
-  state = {searchInput: '', finalDestinationList: ''}
+  state = {searchInput: ''}
 
   onChangeSearchInput = event => {
+    const text = event.target.value.toLowerCase()
+    console.log(text)
+
     this.setState({
-      searchInput: event.target.value,
+      searchInput: text,
     })
+    // const text = searchInput.toLowerCase()
+    // console.log(text)
   }
 
   render() {
-    const {searchInput, finalDestinationList} = this.state
+    const {searchInput} = this.state
 
     const {destinationsList} = this.props
 
@@ -31,13 +36,14 @@ class DestinationSearch extends Component {
           onChange={this.onChangeSearchInput}
           value={searchInput}
         />
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png"
+          alt="search icon"
+        />
 
         <ul>
           {searchResult.map(eachPlace => (
-            <DestinationItem
-              destinationList={eachPlace.destinationList}
-              key={eachPlace.id}
-            />
+            <DestinationItem destinationList={eachPlace} key={eachPlace.id} />
           ))}
         </ul>
       </div>

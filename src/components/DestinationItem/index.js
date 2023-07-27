@@ -3,8 +3,8 @@
 import './index.css'
 
 const DestinationItem = props => {
-  const {destinationItem} = props
-  const {name, imgUrl} = destinationItem
+  const {destinationList} = props
+  const {name, imgUrl} = destinationList
 
   return (
     <li className="list-item">
